@@ -10,3 +10,11 @@ Terraform flow:
 1. Init: Initialization, provider identification
 2. Plan.:draft a plan to get to the desired infra
 3. Apply: modifies
+
+
+Destroying:
+```shell
+ terraform destroy
+```
+
+This command will destroy the infrastructure, cleaning the tfstate along the way

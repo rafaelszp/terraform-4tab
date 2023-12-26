@@ -7,6 +7,5 @@ resource "local_file" "pet" {
   filename = "out/pets.txt"
   #Argument content
   content = "All the pets are petsy"
-  # file_permission = "0666"
-  directory_permission = "0666"
+  file_permission = "0700"
 }
