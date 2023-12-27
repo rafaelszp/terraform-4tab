@@ -18,3 +18,13 @@ Destroying:
 ```
 
 This command will destroy the infrastructure, cleaning the tfstate along the way
+
+
+#### Convention
+
+|Filename|Purpose content|
+|--|--|
+|main.tf| Main configuration containing all resources|
+|variables.tf|Variables declaration|
+|outputs.tf|Contains outputs from resources|
+|provider.tf|Contains provider defintion|
