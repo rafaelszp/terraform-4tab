@@ -4,11 +4,11 @@ resource "tls_private_key" "rsa_key" {
 }
 
 resource "local_file" "rsa_pub" {
-  filename = "out/rsa.pub"
+  filename = "out/id_rsa.pub"
   content = "${tls_private_key.rsa_key.public_key_openssh}"
 }
 
 resource "local_file" "rsa_pvt" {
-  filename = "out/rsa.pvt"
+  filename = "out/id_rsa"
   content = "${tls_private_key.rsa_key.private_key_openssh}"
 }
