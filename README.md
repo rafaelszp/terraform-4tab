@@ -53,4 +53,8 @@ terraform graph | dot -Tsvg > graph.svg
 # format to a canonical format
 terraform fmt
 
+
+# showing an specific resource of the state file
+terraform state show local_file.file
+
 ```
