@@ -18,6 +18,17 @@ resource "aws_dynamodb_table" "cars" {
     name = "Make"
     type = "S"
   }
+
+  attribute {
+    name = "Color"
+    type = "S"
+  }
+
+  global_secondary_index {
+    name = "Color"
+    hash_key = "Color"
+    projection_type = "ALL"
+  }
 }
 
 resource "aws_dynamodb_table_item" "car-items" {
