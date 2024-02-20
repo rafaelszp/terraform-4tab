@@ -1,6 +1,8 @@
 
 terraform {
   backend "s3" {
+    access_key = "mock_access_key"
+    secret_key = "mock_secret_key"
     # Existing bucket
     bucket            = "my-example-terraform-state-bucket-01"
     #this object must exist: filename 
@@ -10,7 +12,8 @@ terraform {
     dynamodb_table    = "state-locking"
 
     endpoints = {
-      s3 = "http://getin-rafael-vm:4556"
+      s3 = "http://getin-rafael-vm:4566"
+      dynamodb = "http://getin-rafael-vm:4566"
     }
     use_path_style = true
     skip_credentials_validation = true
