@@ -57,4 +57,28 @@ terraform fmt
 # showing an specific resource of the state file
 terraform state show local_file.file
 
+# List all resources in state
+terraform state list
+
+
+#show state in json format
+terraform state pull
+
+
+##Capturing hash_key with jq
+terraform state pull | jq '.resources[] | select (.name == "cars")|.instances[]|.attributes.hash_key'
+
+
+#rename resources / move to another state file
+# After this operation, the tf file must be modified
+terraform state mv <resource> <dest>
+
+
+# used when we need to remove the resource from terraform indicating it's no longer managed 
+# After this operation, the tf file must be modified so the resource is removed from there as well
+# The resource won't be destroyed, only unmanaged by tf
+terraform state rm <ADDRESS>
+
+
+
 ```
