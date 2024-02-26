@@ -80,5 +80,21 @@ terraform state mv <resource> <dest>
 terraform state rm <ADDRESS>
 
 
+#Tainting the resource so it can be recreated
+# A resource is tainted when a provision fails or manually by the following command:
+terraform taint <resource name>
+
+
+#logging
+#Levels: ERROR, WARNING, INFO, DEBUG, TRACE
+export TF_LOG=<Log Level>
+
+# Defining a file to store logs
+export TF_LOG_PATH=<log path>
+
+
+# Importing external resources to be managed by tf
+# Config files won't be updated, only the state file
+terraform import <resource_type>.<resource_name> <attribute>
 
 ```
