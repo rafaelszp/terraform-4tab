@@ -95,6 +95,22 @@ export TF_LOG_PATH=<log path>
 
 # Importing external resources to be managed by tf
 # Config files won't be updated, only the state file
+#ex.: terraform import aws_instance.test i-aabbccddeeddff-1
+# be careful. You would mess the state if you run the comand with the wrong arguments
 terraform import <resource_type>.<resource_name> <attribute>
+
+
+#Console to test functions
+terraform console
+
+
+# create a new workspace
+terraform workspace new <Workspace name>
+
+# listing workspaces
+terraform workspace list
+
+# changing workspace
+terraform workspace select <Workspace name>
 
 ```
